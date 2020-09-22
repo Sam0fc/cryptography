@@ -2,7 +2,12 @@
 # Arguments: string, integer
 # Returns: string
 def encrypt_caesar(plaintext, offset):
-    pass
+    new_text = ""
+    for letter in plaintext.upper():
+        if letter.isalpha():
+            letter = chr(((ord(letter)-64)%26) + offset + 64)
+        new_text += letter
+    return new_text
 
 # Arguments: string, integer
 # Returns: string
@@ -42,7 +47,7 @@ def decrypt_mhkc(ciphertext, private_key):
     pass
 
 def main():
-    # Testing code here
+    print(encrypt_caesar(" !\#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",1))
     pass
 
 if __name__ == "__main__":
